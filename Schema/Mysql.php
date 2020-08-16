@@ -16,6 +16,7 @@ function version_1($pdo)
             time_spent FLOAT DEFAULT 0,
             comment TEXT,
             is_billable INT,
+            PRIMARY KEY(id)
             FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
             FOREIGN KEY(task_id) REFERENCES tasks(id) ON DELETE CASCADE
         ) ENGINE=InnoDB CHARSET=utf8
