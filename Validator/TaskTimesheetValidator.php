@@ -23,7 +23,6 @@ class TaskTimesheetValidator extends BaseValidator
      */
     public function validateCreation(array $values)
     {
-        print_r($values);
         $rules = array ();
 
         $v = new Validator($values, array_merge($rules, $this->commonValidationRules()));

@@ -36,7 +36,7 @@
             <td><?= $this->dt->datetime($record['end']) ?></td>
             <td><?= n($record['time_spent']).' '.t('hours') ?></td>
             <td>
-            <?php if ($this->subtaskPermission->canEdit($record)) { ?>
+            <?php if ($this->projectRole->canUpdateTask($record)) { ?>
                 <?= $this->render('taskTimesheets:menu', array(
                     'task' => $task,
                     'id' => $record['id']
