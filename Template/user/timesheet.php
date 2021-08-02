@@ -18,7 +18,7 @@
         </tr>
         <?php foreach ($taskTimesheets_paginator->getCollection() as $record): ?>
         <tr>
-            <td><?= $this->url->link($this->text->e($record['title']), 'TaskViewController', 'show', array('project_id' => $record['project_id'], 'task_id' => $record['task_id'])) ?></td>
+            <td><?= $this->url->link($this->text->e($record['task_title']), 'TaskViewController', 'show', array('project_id' => $record['project_id'], 'task_id' => $record['task_id'])) ?></td>
             <td><?= $this->dt->datetime($record['start']) ?></td>
             <td><?= $this->dt->datetime($record['end']) ?></td>
             <td><?= n($record['time_spent']).' '.t('hours') ?></td>

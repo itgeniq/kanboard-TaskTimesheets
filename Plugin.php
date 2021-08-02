@@ -14,9 +14,13 @@ class Plugin extends Base
         $this->template->setTemplateOverride('task/time_tracking_details', 'taskTimesheets:task/time_tracking_details');
         $this->template->setTemplateOverride('user_view/timesheet', 'taskTimesheets:user/timesheet');
         $this->helper->register('taskTimesheetHelper', '\Kanboard\Plugin\TaskTimesheets\Helper\TaskTimesheetHelper');
+        $this->template->hook->attach('template:task:show:before-subtasks', 'taskTimesheets:task/show');
         // $this->hook->on('template:task:sidebar:actions', function($data){
         //   return $data;
         // });
+        $this->api->getProcedureHandler()->withCallback('test', function() {
+            return ['this' => 'foobar'];
+        });
         
     }
 

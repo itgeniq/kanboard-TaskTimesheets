@@ -28,11 +28,11 @@ class TaskTimesheetHelper extends Base
     {
         $taskTimesheetModel = new TaskTimesheetModel($this->container);
         $timesheet_paginator = $this->paginator
-            ->setUrl('UserViewController', 'timesheet', array('user_id' => $user['id'], 'pagination' => 'timesheets'))
+            ->setUrl('UserViewController', 'timesheet', array('user_id' => $user, 'pagination' => 'timesheets'))
             ->setMax(10)
             ->setOrder('start')
             ->setDirection('DESC')
-            ->setQuery($taskTimesheetModel->getUserQuery($user['id']))
+            ->setQuery($taskTimesheetModel->getUserQuery($user))
             ->calculateOnlyIf($this->request->getStringParam('pagination') === 'timesheets');
 
         // return $taskTimesheetModel->getAll($taskId);

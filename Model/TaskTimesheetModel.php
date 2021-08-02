@@ -161,6 +161,7 @@ class TaskTimesheetModel extends Base
                         self::TABLE.'.start',
                         self::TABLE.'.time_spent',
                         self::TABLE.'.user_id',
+                        self::TABLE.'.comment',
                         TaskModel::TABLE.'.title AS title',
                         TaskModel::TABLE.'.project_id',
                         UserModel::TABLE.'.username',
